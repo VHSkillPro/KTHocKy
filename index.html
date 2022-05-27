@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Kickstart Your Business</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./img/logo.png" alt="" class="logo">
+            <div class="nav">
+                <a href="#" class="nav-item nav-item--active">Home</a>
+                <a href="#" class="nav-item">About</a>
+                <a href="#" class="nav-item">Companies</a>
+                <a href="#" class="nav-item">Investors</a>
+                <a href="#" class="nav-item">Contact Us</a>
+            </div>
+            <div class="sign-in-out">
+                <a href="#" class="btn btn--primary btn-signin">SIGN IN</a>
+                <a href="#" class="btn btn--primary btn--hover btn-signup">SIGN UP</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="title">Let's Kickstart Your Business!</div>
+            <div class="sub-content">
+                <div class="left">
+                    <div class="title">BUSINESS CAPITAL</div>
+                    <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</div>
+                    <a href="#" class="btn btn--secondary btn--hover btn-signup">SIGN UP</a>
+                </div>
+                <div class="right">
+                    <div class="title">MENTORSHIP</div>
+                    <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</div>
+                    <a href="#" class="btn btn--secondary">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay disable">
+
+    </div>
+    <div class="form-container disable">
+        <div class="form__left">
+            <form class="form login">
+                <div class="form__row">
+                    <div class="form__title">SIGN IN</div>
+                </div>
+                <div class="form__row">
+                    <div>
+                        <i class="form__icon fa-solid fa-user"></i>
+                        <label class="form__label">Username</label>
+                    </div>
+                    <input class="form__input" type="text" placeholder="Please enter username...">
+                </div>
+                <div class="form__row">
+                    <div>
+                        <i class="form__icon fa-solid fa-key"></i>
+                        <label class="form__label">Password</label>
+                    </div>
+                    <input class="form__input" type="password" placeholder="Please enter password...">
+                </div>
+                <div class="form__row">
+                    <a href="#" class="btn btn--primary">Sign In</a>
+                </div>
+            </form>
+            <a href="#" class="btn-direct btn-direct-sign-in btn btn--secondary">Sign In</a>
+        </div>
+        <div class="form__right">
+            <form class="form register">
+                <div class="form__row">
+                    <div class="form__title">SIGN UP</div>
+                </div>
+                <div class="form__row">
+                    <div>
+                        <i class="form__icon fa-solid fa-user"></i>
+                        <label class="form__label">Username</label>
+                    </div>
+                    <input class="form__input" type="text" placeholder="Please enter username...">
+                </div>
+                <div class="form__row">
+                    <div>
+                        <i class="form__icon fa-solid fa-key"></i>
+                        <label class="form__label">Password</label>
+                    </div>
+                    <input class="form__input" type="password" placeholder="Please enter password...">
+                </div>
+                <div class="form__row">
+                    <div>
+                        <i class="form__icon fa-solid fa-key"></i>
+                        <label class="form__label">Re-password</label>
+                    </div>
+                    <input class="form__input" type="text" placeholder="Please enter re-password...">
+                </div>
+                <div class="form__row">
+                    <a href="#" class="btn btn--primary">Sign Up</a>
+                </div>
+            </form>
+            <a href="#" class="btn-direct btn-direct-sign-up btn btn--secondary disable">Sign Up</a>
+        </div>
+        <i class="form__close fa-solid fa-xmark"></i>
+        <div class="box">
+            <div class="form__row">
+                <p class="title">Let's Kickstart Your Business!</p> 
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSignIn(){
+            $('.box').animate({left: '50%'});
+            $('.btn-direct-sign-in').animate({opacity: '0'}, 'slow');
+            $('.btn-direct-sign-in').addClass('disable');
+            $('.btn-direct-sign-up').animate({opacity: '1'}, 'slow');
+            $('.btn-direct-sign-up').removeClass('disable');
+        }
+        function showSignUp(){
+            $('.box').animate({left: '0%'});
+            $('.btn-direct-sign-in').animate({opacity: '1'}, 'slow');
+            $('.btn-direct-sign-in').removeClass('disable');
+            $('.btn-direct-sign-up').animate({opacity: '0'}, 'slow');
+            $('.btn-direct-sign-up').addClass('disable');
+        }
+
+        $('.form__close').click(function(){
+            $(".form-container").addClass("disable");
+            $(".overlay").addClass("disable");
+        });
+        $('.btn-signin').click(function(){
+            $(".form-container").removeClass("disable");
+            $(".overlay").removeClass("disable");
+            showSignIn();
+        });
+        $('.btn-signup').click(function(){
+            $(".form-container").removeClass("disable");
+            $(".overlay").removeClass("disable");
+            showSignUp();
+        });
+        $('.btn-direct-sign-in').click(showSignIn);
+        $('.btn-direct-sign-up').click(showSignUp);
+    </script>
+</body>
+</html>
