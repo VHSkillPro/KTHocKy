@@ -4,9 +4,12 @@
     --thirdary-color: #ec68a5;
 }
 @font-face {
+    font-family: "Dela Gothic One";
     src: url('../font/DelaGothicOne-Regular.ttf');
-    src: url('../font/DMSans-Regular.ttf');
+}
+@font-face {
     font-family: "DMSans";
+    src: url('../font/DMSans-Regular.ttf');
 }
 
 *{
